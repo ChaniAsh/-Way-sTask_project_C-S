@@ -6,10 +6,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import CommentIcon from '@mui/icons-material/Comment';
 
-
-export default function ListFunc() {
+export default function CheckboxList() {
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value) => () => {
@@ -18,22 +17,16 @@ export default function ListFunc() {
 
     if (currentIndex === -1) {
       newChecked.push(value);
-    } 
-    else {
+    } else {
       newChecked.splice(currentIndex, 1);
     }
 
     setChecked(newChecked);
   };
-let newArray=[];
-let i=0;
-let taskArray=["לקנות חלב","לתקן שעון","להתקשר לסבתא","לקנות נעליים"];//הנתונים שיציג
-taskArray.forEach(element => {
-  newArray.push(i++);
-});
+
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {newArray.map((value) => {
+      {[0, 1, 2, 3].map((value) => {
         const labelId = `checkbox-list-label-${value}`;
 
         return (
@@ -41,14 +34,11 @@ taskArray.forEach(element => {
             key={value}
             secondaryAction={
               <IconButton edge="end" aria-label="comments">
-                {/*אייקון בצד ימין */}
-                {/* <AlarmIcon id='alarm'/> */}
-                <MoreVertIcon/>
+                <CommentIcon />
               </IconButton>
             }
             disablePadding
           >
-
             <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
               <ListItemIcon>
                 <Checkbox
@@ -59,8 +49,7 @@ taskArray.forEach(element => {
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              {/* שם המשימה */}
-              <ListItemText id='text' /*id={labelId}*/ primary={/*`משימה ${value}`*/`${taskArray[value]}`} />
+              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
             </ListItemButton>
           </ListItem>
         );
