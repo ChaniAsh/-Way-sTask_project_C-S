@@ -8,6 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 // import CommentIcon from '@mui/icons-material/Comment';
 import EditLocationIcon from '@mui/icons-material/EditLocationAlt';
+import Group from './ButtonGroupPosition'
 
 export default function ListPosition() {
   const [checked, setChecked] = React.useState([0]);
@@ -42,7 +43,7 @@ taskArray.forEach(element => {
             secondaryAction={
               <IconButton edge="end" aria-label="comments">
                 {/* <CommentIcon />אייקון בצד ימין */}
-                <EditLocationIcon/>
+                <Group id='but'></Group>
               </IconButton>
             }
             disablePadding
@@ -59,7 +60,7 @@ taskArray.forEach(element => {
                 />
               </ListItemIcon>
               {/* שם המשימה */}
-              <ListItemText id='text' id={labelId} primary={/*`משימה ${value}`*/`${taskArray[value]}`} />
+              <ListItemText id='text' /*id={labelId}*/ primary={/*`משימה ${value}`*/`${taskArray[value]}`} />
             </ListItemButton>
           </ListItem>
         );

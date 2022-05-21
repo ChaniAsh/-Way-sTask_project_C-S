@@ -6,10 +6,17 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
-// import CommentIcon from '@mui/icons-material/Comment';
-// import AlarmIcon from '@mui/icons-material/Alarm';
-// import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Group from './ButtonGroupTask'
+// import Button from '@mui/material/Button';
+// import ClickAwayListener from '@mui/material/ClickAwayListener';
+// import Grow from '@mui/material/Grow';
+// import Paper from '@mui/material/Paper';
+// import Popper from '@mui/material/Popper';
+// import MenuItem from '@mui/material/MenuItem';
+// import MenuList from '@mui/material/MenuList';
+
+
 
 
 export default function ListFunc() {
@@ -44,9 +51,10 @@ taskArray.forEach(element => {
             key={value}
             secondaryAction={
               <IconButton edge="end" aria-label="comments">
-                {/* <CommentIcon />אייקון בצד ימין */}
+                {/*אייקון בצד ימין */}
                 {/* <AlarmIcon id='alarm'/> */}
-                <MoreVertIcon/>
+                <Group id='but'></Group>
+                
               </IconButton>
             }
             disablePadding
