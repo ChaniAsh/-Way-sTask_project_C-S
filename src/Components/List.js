@@ -8,18 +8,11 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Group from './ButtonGroupTask'
-// import Button from '@mui/material/Button';
-// import ClickAwayListener from '@mui/material/ClickAwayListener';
-// import Grow from '@mui/material/Grow';
-// import Paper from '@mui/material/Paper';
-// import Popper from '@mui/material/Popper';
-// import MenuItem from '@mui/material/MenuItem';
-// import MenuList from '@mui/material/MenuList';
+import { useEffect, useState } from "react";
 
 
 
-
-export default function ListFunc() {
+export default function ListF(props) {
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value) => () => {
@@ -35,9 +28,11 @@ export default function ListFunc() {
 
     setChecked(newChecked);
   };
+  
 let newArray=[];
 let i=0;
-let taskArray=["לקנות חלב","לתקן שעון","להתקשר לסבתא","לקנות נעליים"];//הנתונים שיציג
+let taskArray=[];
+taskArray = props.list.map(x=>x.title);
 taskArray.forEach(element => {
   newArray.push(i++);
 });
@@ -53,7 +48,7 @@ taskArray.forEach(element => {
               <IconButton edge="end" aria-label="comments">
                 {/*אייקון בצד ימין */}
                 {/* <AlarmIcon id='alarm'/> */}
-                <Group id='but'></Group>
+                <Group /*id='but'*/></Group>
                 
               </IconButton>
             }
